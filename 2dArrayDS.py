@@ -1,4 +1,3 @@
-#!/bin/python3
 
 import math
 import os
@@ -7,7 +6,17 @@ import re
 import sys
 
 
+'''
+SAMPLE :
+1 1 1 0 0 0
+0 1 0 0 0 0
+1 1 1 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
 
+problem : https://www.hackerrank.com/challenges/2d-array/problem
+'''
 
 def hourglassSum(arr):
     newsum = []
@@ -20,11 +29,11 @@ def hourglassSum(arr):
         glass = sum(arr[1][i:i+3]) + arr[2][i+1] +  sum(arr[3][i:i+3])
         newsum.append(glass)
     
-    for i in range(4):
+    for i in range(4): #third row of glasses
         glass = sum(arr[2][i:i+3]) + arr[3][i+1] +  sum(arr[4][i:i+3])
         newsum.append(glass)
     
-    for i in range(4):
+    for i in range(4): #fourth row of glasses
         glass = sum(arr[3][i:i+3]) + arr[4][i+1] +  sum(arr[5][i:i+3])
         newsum.append(glass)
     return max(newsum)

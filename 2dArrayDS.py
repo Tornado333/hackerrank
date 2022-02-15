@@ -5,18 +5,20 @@ import random
 import re
 import sys
 
+# problem : https://www.hackerrank.com/challenges/2d-array/problem
+
+
+def hourglassSum(arr):
+    newsum = []
+    for i in range(4):
+        for j in range(4):
+            glass = sum(arr[j][i:i+3]) + arr[j+1][i+1] +  sum(arr[j+2][i:i+3])
+            newsum.append(glass)
+    return max(newsum)
+
 
 '''
-SAMPLE :
-1 1 1 0 0 0
-0 1 0 0 0 0
-1 1 1 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-
-problem : https://www.hackerrank.com/challenges/2d-array/problem
-'''
+OLD SOLUTION :
 
 def hourglassSum(arr):
     newsum = []
@@ -54,3 +56,4 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+    '''
